@@ -1,0 +1,150 @@
+<form name="myForm" action="mailto:you@yourdmainhere.com" method="post" enctype="text/plain" method="post">
+    <tr>
+        <td>
+           <label>
+              Votre nom <span class="required">*</span>
+           </label>
+        </td>
+        <td>
+           <input type="text" name="name" class="long"/>
+           <span class="error" id="errorname"></span>
+        </td>
+     </tr>
+
+     <script> 
+        function validateForm()                                    
+ { 
+     var name = document.forms["myForm"]["name"];               
+  
+    
+     if (name.value == "")                                  
+     { 
+         document.getElementById('errorname').innerHTML="Veuillez entrez un nom valide";  
+         name.focus(); 
+         return false; 
+     }else{
+         document.getElementById('errorname').innerHTML="";  
+     }
+        
+
+    
+     return true; 
+ }
+       </script>
+
+<html>
+    <head>
+       <script> 
+        function validateForm()                                    
+ { 
+     var name = document.forms["myForm"]["name"];               
+     var email = document.forms["myForm"]["email"];    
+     var message = document.forms["myForm"]["message"];   
+    
+     if (name.value == "")                                  
+     { 
+         document.getElementById('errorname').innerHTML="R";  
+         name.focus(); 
+         return false; 
+     }else{
+         document.getElementById('errorname').innerHTML="";  
+     }
+        
+     if (email.value == "")                                   
+     { 
+         document.getElementById('R').innerHTML="R"; 
+         email.focus(); 
+         return false; 
+     }else{
+         document.getElementById('R').innerHTML="";  
+     }
+    
+    
+     if (message.value == "")                           
+     {
+         document.getElementById('R').innerHTML="R"; 
+         message.focus(); 
+         return false; 
+     }else{
+         document.getElementById('R').innerHTML="";  
+     }
+    
+     return true; 
+ }
+       </script> 
+ 
+ </head>
+ 
+ 
+ <body>
+ 
+    <ul>
+       <li><a href="Pagedepresentation.html">Formation</a></li>
+       <li><a href="Experience.html">Exp&eacuteriences</a></li>
+       <li><a class="active" href="contact.html">Contact</a></li>
+       <li><a href="FORMPHP.html">Modele de NDA</a></li>
+   
+     </ul>
+ 
+ <link rel="stylesheet" href="style.css"/>  
+ 
+    </head>
+    <body>
+ 
+       <div class=conteneur>
+          <h2> <img src="/Users/clementfontaine/Documents/Image restaurant/clem.jpg" style="width: 50%;" alt="Image profil"></h2>
+            <h2> Clement Fontaine </h2>
+          </div> 
+          
+          
+ 
+       <h4>Contact</h4>
+ 
+      
+ 
+       <form name="myForm" action="mailto:you@yourdmainhere.com" method="post" enctype="text/plain" onsubmit="return validateForm()" method="post">
+          <table class="form-style">
+             <tr>
+                <td>
+                   <label>
+                      Votre nom <span class="required">*</span>
+                   </label>
+                </td>
+                <td>
+                   <input type="text" name="name" class="long"/>
+                   <span class="error" id="errorname"></span>
+                </td>
+             </tr>
+             <tr>
+                <td>
+                   <label>
+                      Votre adresse e-mail <span class="required">*</span>
+                   </label>
+                </td>
+                <td>
+                   <input type="email" name="email" class="long"/>
+                   <span class="error" id="erroremail"></span>
+                </td>
+             </tr>
+             <tr>
+                <td>
+                   <label>
+                      Message <span class="required">*</span>
+                   </label>
+                </td>
+                <td>
+                   <textarea name="message" class="long field-textarea"></textarea>
+                   <span class="error" id="errormsg"></span>
+                </td>
+             </tr>
+             <tr>
+                <td></td>
+                <td>
+                   <input type="submit" value="Envoyer">      
+                   <input type="reset" value="Reinitialiser"> 
+                </td>
+             </tr>
+          </table>
+       </form>
+    </body>
+ </html>
